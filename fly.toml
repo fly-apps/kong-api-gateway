@@ -1,0 +1,19 @@
+app = "lively-haze-3269"
+
+# Kong Gateway
+[[services]]
+  internal_port = 8000
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"
+
+# Kong Admin
+[[services]]
+  internal_port = 8001
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "10001"
