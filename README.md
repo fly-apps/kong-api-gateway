@@ -1,11 +1,13 @@
 # Running a Kong API Gateway on Fly.io
+<!---- cut here --->
+
 Microservices have gained widespread adoption in the past decade, but they present their own set of challenges. Traffic control, authentication, logging, and rate limiting are essential in distributed architectures, but not easy to manage when your organization runs dozens or hundreds of APIs.
 
 [Kong](https://konghq.com/kong/) provides an excellent solution to these problems. It's an open-source API gateway that sits between your users and backend services. By proxying requests through Kong, you can enforce standardized authentication rules, log requests and errors, and even transform data on the fly.
 
 Kong can be deployed to a central server, but this slows down your application because all your web requests must pass through a central location before being sent to your backing services. Fortunately, you can take advantage of [Fly's edge hosting model](https://fly.io/) to improve performance by serving Kong on Fly's globally distributed network.
 
-![Running a distributed Kong API Gateway on Fly.io](fly-2020-07-22-a.jpg)
+![Running a distributed Kong API Gateway on Fly.io](https://raw.githubusercontent.com/fly-examples/kong-api-gateway/main/fly-2020-07-22-a.jpg)
 
 ## How to Deploy a Kong API Gateway to Fly
 In this tutorial, you'll see how to deploy a Kong API Gateway to Fly.io. You'll expose the free [JSON Placeholder](https://jsonplaceholder.typicode.com/) as a backend service and use Kong to add rate limiting and API key authentication. Finally, you'll see how to lock down the Kong Admin API so that only authenticated users can access it. You'll see all the steps required in this tutorial, but if you'd like to download the final working application, it's [available on Github](https://github.com/karllhughes/fly-kong).
